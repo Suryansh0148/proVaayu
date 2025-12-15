@@ -7,6 +7,8 @@ export default function Jobdetails() {
   const [resume, setResume] = useState(null);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const apiBase = import.meta.env.VITE_API_URL || "https://provaayu.onrender.com";
+
   
     async function handleSubmit() {
     // Check if Name is entered
@@ -29,7 +31,7 @@ export default function Jobdetails() {
     formData.append("jobId", id);
     formData.append("resume", resume);
 
-    await fetch("http://localhost:5000/apply", {
+    await fetch(`${apiBase}/apply`, {
       method: "POST",
       body: formData,
     });
