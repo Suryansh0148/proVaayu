@@ -37,6 +37,7 @@ export default function Signup() {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [isLoading, setIsLoading] = useState(false);
+    const apiBase = import.meta.env.VITE_API_URL || "https://provaayu.onrender.com";
 
     // Basic Client-Side Validation
     const validateForm = () => {
@@ -63,7 +64,7 @@ export default function Signup() {
         setIsLoading(true);
         
         try {
-            const response = await fetch("http://localhost:5000/Submit", {
+            const response = await fetch('${apiBase}Submit', {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json',
