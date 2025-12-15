@@ -9,7 +9,7 @@ import Careers from './pages/Careers';
 import Jobdetails from './pages/Jobdetails';
 import Services from './pages/Services';
 import Home from './pages/Home';
-import Signup from './pages/signup';
+import Signup from './pages/Signup';
 const App = () => {
   return (
     <Router>
