@@ -5,6 +5,7 @@ export default function Contact() {
   const [email, setEmail] = useState("");
   const [company, setCompany] = useState("");
   const [message, setMessage] = useState("");
+  const apiBase = import.meta.env.VITE_API_URL || "https://provaayu.onrender.com";
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -29,7 +30,7 @@ export default function Contact() {
       message,
     };
 
-    await fetch("http://localhost:5000/contact", {
+    await fetch('${apiBase}/contact', {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
