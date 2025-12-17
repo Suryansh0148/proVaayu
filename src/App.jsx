@@ -1,5 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Analytics } from '@vercel/analytics/react';
 import Footer from './components/Footer'
 import About from './pages/About'
 import Products from './pages/Products'
@@ -30,6 +31,7 @@ const App = () => {
       </main>
     
       <Footer/>
+      <Analytics />
     </div>
     </Router>
   )
